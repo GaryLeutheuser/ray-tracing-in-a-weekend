@@ -1,6 +1,9 @@
 # Bazel
 bazel*
 
+# Output
+*.ppm
+
 # Prerequisites
 *.d
 
