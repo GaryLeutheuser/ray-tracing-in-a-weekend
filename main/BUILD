@@ -11,13 +11,55 @@ cc_library(
     ],
 )
 
+cc_library(
+    name = "ray",
+    hdrs = ["ray.h"],
+    deps = [
+        ":vec3",
+    ],
+)
 
+cc_library(
+    name = "hittable",
+    hdrs = ["hittable.h"],
+    deps = [
+        ":ray",
+    ],
+)
+
+cc_library(
+    name = "sphere",
+    hdrs = ["sphere.h"],
+    deps = [
+        ":hittable",
+        ":vec3",
+    ],
+)
+
+cc_library(
+    name = "hittable_list",
+    hdrs = ["hittable_list.h"],
+    deps = [
+        ":hittable",
+    ],
+)
+
+cc_library(
+    name = "rtweekend",
+    hdrs = ["rtweekend.h"],
+    deps = [
+        ":ray",
+        ":vec3",
+    ],
+)
 
 cc_binary(
     name = "main",
     srcs = ["main.cc"],
     deps = [
-        ":vec3",
+        ":rtweekend",
         ":color",
+        ":sphere",
+        ":hittable_list",
     ],
 )
