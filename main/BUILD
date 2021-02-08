@@ -61,6 +61,14 @@ cc_library(
     ],
 )
 
+cc_library(
+    name = "material",
+    hdrs = ["material.h"],
+    deps = [
+        ":rtweekend",
+    ],
+)
+
 cc_binary(
     name = "main",
     srcs = ["main.cc"],
@@ -70,5 +78,6 @@ cc_binary(
         ":sphere",
         ":hittable_list",
         ":camera",
+        ":material",
     ],
 )
