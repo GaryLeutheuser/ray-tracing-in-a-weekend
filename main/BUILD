@@ -53,6 +53,14 @@ cc_library(
     ],
 )
 
+cc_library(
+    name = "camera",
+    hdrs = ["camera.h"],
+    deps = [
+        ":rtweekend",
+    ],
+)
+
 cc_binary(
     name = "main",
     srcs = ["main.cc"],
@@ -61,5 +69,6 @@ cc_binary(
         ":color",
         ":sphere",
         ":hittable_list",
+        ":camera",
     ],
 )
